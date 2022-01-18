@@ -1,3 +1,3 @@
-https://github.com/rolling-scopes-school/nagaevroman-JSFEPRESCHOOL/portfolio/
+https://rolling-scopes-school.github.io/nagaevroman-JSFEPRESCHOOL/portfolio/
 # nagaevroman-JSFEPRESCHOOL
 Private repository for @nagaevroman
