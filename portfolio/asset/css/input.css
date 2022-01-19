@@ -21,6 +21,7 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  background-color: var(--bg-dark-color);
 }
 
 /* *, *::before, *::after {
