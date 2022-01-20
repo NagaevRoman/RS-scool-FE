@@ -140,13 +140,12 @@
           
             <img class='img__video' src="asset/img/video-player.jpg" alt="videopalyer">
         
-          <div class="video__play">
             <button class="button-play" type="submit">
               <svg class="icon">
                 <use xlink:href="asset/icon/Play_hover.svg#play"></use>
               </svg>
             </button>
-          </div>
+          
         </div>
       </section>
       <section class="section__price" id="price">
@@ -230,13 +229,15 @@
       </section>
       <section class="section__contacts" id="contacts">
         <div class="contact__field">
-          <h2 class="section-title contact-title">Contact me</h2>
-          <form>
-            <input type="email" placeholder="E-mail" class="input-form">
-            <input name="tel" type="tel" placeholder="Phone" class="input-form">
-            <textarea class="message"  name="text" placeholder="Message"></textarea>
-            <button type="submit" class="button button__gold" id="send">Send message</button>
-           </form>
+          <div class="contact__field-inputs">
+             <h2 class="section-title        contact-title">Contact me</h2>
+            <form>
+              <input type="email" placeholder="E-mail" class="input-form">
+              <input name="tel" type="tel" placeholder="Phone" class="input-form">
+              <textarea class="message"  name="text" placeholder="Message"></textarea>
+              <button type="submit" class="button button__gold" id="send">Send message</button>
+            </form>
+          </div>
         </div>
       </section>
     </div>
@@ -247,7 +248,7 @@
         <div class="left__block-item">&#169;</div>
         <div class="left__block-item">2022</div>
         <a target="_blank" class="my-github" href="//github.com/NagaevRoman">
-          <div class="left__block-item">github
+          <div class="left__block-item target">github
           </div>
         </a>
       </div>
@@ -257,18 +258,29 @@
           </p>
         </a>
       <div class="right__block">
-        <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
-          <img src="asset/icon/instagram.svg" alt="Instagram Icon"  class="right__block-icon">
-        </a>
-        <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
-          <img src="asset/icon/facebook.svg" alt="Facebook Icon"  class="right__block-icon">
-        </a>
-        <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
-          <img src="asset/icon/twitter.svg" alt="Twitter Icon"  class="right__block-icon">
-        </a>
-        <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
-          <img src="asset/icon/pinterest.svg" alt="Pinterest Icon"  class="right__block-icon">
-        </a>
+        <ul class="right__block-list">
+          <li class="right__block-list item">
+            <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
+            <img src="asset/icon/instagram.svg" alt="Instagram Icon"  class="right__block-icon">
+            </a>
+          </li>
+          <li class="right__block-list item">
+            <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
+              <img src="asset/icon/facebook.svg" alt="Facebook Icon"  class="right__block-icon">
+            </a>
+          </li>
+          <li class="right__block-list item"> 
+            <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
+              <img src="asset/icon/twitter.svg" alt="Twitter Icon"  class="right__block-icon">
+            </a>
+          </li>
+          <li class="right__block-list item">
+            <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
+              <img src="asset/icon/pinterest.svg" alt="Pinterest Icon"  class="right__block-icon">
+            </a>
+          </li>
+
+        </ul>
       </div>
     </div>
   </footer>
