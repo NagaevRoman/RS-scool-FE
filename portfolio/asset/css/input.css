@@ -7,10 +7,9 @@
   --bg-dark-color: #000000;
   --gold-color: #BDAE82;
   --white-color: #ffffff;
-  --unit-text: 18px;
   --unit-head1: 60px;
   --unit-head2: 40px;
-  --unit-head3: 20px;
+  --unit-text: 20px;
   --headings-font-family: Merriweather, serif;
   --text-font-family: Inter, sans-serif;
   --font-weight400: 400;
@@ -37,7 +36,7 @@ h1 {
 }
 
 h3 {
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -50,17 +49,17 @@ h3 {
 p {
   font-family: var(--text-font-family);
   color: var(--white-color);
-  font-size: var(--unit-text);
-  font-weight: var(--font-weight400);
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .button {
   box-sizing:border-box;
   min-width: 220px;
   min-height: 55px;
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-size: 20px;
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0em;
@@ -80,11 +79,16 @@ p {
 /* Header styles start */
 
 .header {
-  position: fixed;
+  /* position: ку;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 100; */
+  /* display: flex; */
+  position: relative;
+  width: 100%;
   z-index: 100;
+  /* justify-content: space-between; */
 }
 
 .container__header {
@@ -139,7 +143,7 @@ p {
   padding: 0 8px;
   align-items: center;
   color: var(--white-color);
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -170,7 +174,7 @@ li {
 a {
   text-decoration: none;
   color: var(--white-color);
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -189,16 +193,18 @@ a:hover, a:focus, a:active {
   flex-direction: row;
   align-items: center;
   text-align: center;
+  /* height: 50px; */
 }
 
 .switch-lng__link {
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
+  font-family: var(--text-font-family);
+  /* font-size: 20px; */
   font-weight: 700;
   line-height: 50px;
-  letter-spacing: 0em;
-  text-align: center;
+  /* letter-spacing: 0em; */
+  /* text-align: center; */
+  border: 0;
+  padding: 0 1px;
 }
 
 .active, .menu__link:hover, .menu__link:focus, .menu__link:active  {
@@ -219,6 +225,7 @@ a:hover, a:focus, a:active {
 .section__hero {
  background: url(../img/bg.jpg) no-repeat center 0;
   margin: 0 -20px; 
+  margin-top: -90px;
 }
 
 .hero__box {
@@ -230,17 +237,19 @@ a:hover, a:focus, a:active {
 }
 
 p.hero-text {
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
+  /* font-family: Inter; */
+  /* font-size: 20px; */
+  /* font-style: normal; */
+  /* font-weight: normal; */
   line-height: 40px;
-  letter-spacing: 0em;
-  text-align: left;
+  /* letter-spacing: 0em; */
+  /* line-height: 40px; */
+  /* text-align: left; */
   height: 120px;
   max-width: 470px;
   margin-top: 10px;
   margin-bottom: 25px;
+  margin-right: 30px;
 }
 
 .title-text {
@@ -345,7 +354,7 @@ h3.skills__title {
 
 p.text__box {
   margin: 0 20px;
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -377,7 +386,7 @@ p.text__box {
   background-color: transparent;
   min-width: 220px;
   min-height: 55px;
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -395,11 +404,11 @@ p.text__box {
 }
 
 
-.active__portfolio, .button__potfolio:hover, .button__potfolio:focus, .button__potfolio:active {
-  background-color: var(--gold-color);
+.active__portfolio, .button__potfolio:hover, .button__potfolio:focus {
   color: var(--white-color);
   transition-duration: .5s;
 }
+
 
 .active__portfolio {
   background-color: var(--gold-color);
@@ -533,7 +542,7 @@ h3.price-title {
 
 .price-description {
   display: block;
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -595,7 +604,7 @@ h2.contact-title {
   border: 2px solid #BDAE82;
   box-sizing: border-box;
   border-radius: 0px;
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -617,7 +626,7 @@ h2.contact-title {
   border: 2px solid #BDAE82;
   box-sizing: border-box;
   border-radius: 0px;
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -629,7 +638,7 @@ h2.contact-title {
 }
 
  .message::placeholder {
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -640,7 +649,7 @@ h2.contact-title {
 
 
 .input-form::placeholder {
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -676,7 +685,7 @@ h2.contact-title {
 
 .left__block-item {
   padding-right: 20px;
-  font-family: Inter;
+  font-family: var(--text-font-family);
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -697,14 +706,14 @@ h2.contact-title {
   transition-duration: .5s;
 }
 
-p.centre__block {
-  font-family: Inter;
+/* p.centre__block {
+  font-family: var(--text-font-family);
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
   line-height: 50px;
   color: #FFFFFF
-}
+} */
 
 
 
@@ -750,3 +759,21 @@ ul.right__block-list {
 }  
 
 /* footer syles end */
+
+@media (max-width: 768px) {
+  .title__box {
+    justify-content: space-around;
+    
+  }
+
+  .button-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    gap: 10px;
+  }
+}
+
+
+
