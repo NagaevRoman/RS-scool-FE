@@ -20,31 +20,36 @@
           </a>
         </div>
         <div class="naw__wraper">
-            <nav class="menu__body">
-              <ul class="menu__list">
-                <li class="menu__item">
-                  <a href="#skills" class="menu__link">Skills</a>
-                </li>
-                <li class="menu__item">
-                  <a href="#portfolio" class="menu__link">Portfolio</a>
-                </li>
-                <li class="menu__item">
-                  <a href="#video" class="menu__link">Video</a>
-                </li>
-                <li class="menu__item">
-                  <a href="#price" class="menu__link">Price</a>
-                </li>
-                <li class="menu__item">
-                  <a href="#contacts" class="menu__link">Contacts</a>
-                </li>
-              </ul>
-            </nav>
+          <nav class="menu__body">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#skills" class="menu__link">Skills</a>
+              </li>
+              <li class="menu__item">
+                <a href="#portfolio" class="menu__link">Portfolio</a>
+              </li>
+              <li class="menu__item">
+                <a href="#video" class="menu__link">Video</a>
+              </li>
+              <li class="menu__item">
+                <a href="#price" class="menu__link">Price</a>
+              </li>
+              <li class="menu__item">
+                <a href="#contacts" class="menu__link">Contacts</a>
+              </li>
+            </ul>
             <div class="switch-lng">
-              <a href="#en" class="switch-lng__link active">en</a>
-              <div class="line">/</div>
-              <a href="#ru" class="switch-lng__link">ru</a>
+              <button class="switch-lng__link active">en</button>
+              <div class="slash">/</div>
+              <button  class="switch-lng__link">ru</button>
             </div>
-          </div>
+            <div class="burger">
+              <div class="line line1"></div>
+              <div class="line line2"></div>
+              <div class="line line3"></div>
+            </div>
+          </nav>
+        </div>
     </div>
   </header>
   <main class="main">
@@ -138,15 +143,14 @@
         </div>
         <div class="video__container">
           
-            <img class='img__video' src="asset/img/video-player.jpg" alt="videopalyer">
+            <!-- <img class='img__video' src="asset/img/video-player.jpg" alt="videopalyer"> -->
         
-          <div class="video__play">
             <button class="button-play" type="submit">
               <svg class="icon">
                 <use xlink:href="asset/icon/Play_hover.svg#play"></use>
               </svg>
             </button>
-          </div>
+          
         </div>
       </section>
       <section class="section__price" id="price">
@@ -230,13 +234,15 @@
       </section>
       <section class="section__contacts" id="contacts">
         <div class="contact__field">
-          <h2 class="section-title contact-title">Contact me</h2>
-          <form>
-            <input type="email" placeholder="E-mail" class="input-form">
-            <input name="tel" type="tel" placeholder="Phone" class="input-form">
-            <textarea class="message"  name="text" placeholder="Message"></textarea>
-            <button type="submit" class="button button__gold" id="send">Send message</button>
-           </form>
+          <div class="contact__field-inputs">
+             <h2 class="section-title        contact-title">Contact me</h2>
+            <form>
+              <input type="email" placeholder="E-mail" class="input-form">
+              <input name="tel" type="tel" placeholder="Phone" class="input-form">
+              <textarea class="message"  name="text" placeholder="Message"></textarea>
+              <button type="submit" class="button button__gold send" id="send">Send message</button>
+            </form>
+          </div>
         </div>
       </section>
     </div>
@@ -246,33 +252,45 @@
       <div class="left__block">
         <div class="left__block-item">&#169;</div>
         <div class="left__block-item">2022</div>
+        <div class="left__block-item">
         <a target="_blank" class="my-github" href="//github.com/NagaevRoman">
-          <div class="left__block-item">github
-          </div>
+          github
         </a>
       </div>
-        <a target="_blank" class="my-github" href="//rs.school/js-stage0/">
-          <p class="centre__block">
+      </div>
+      <div class="centre__block">
+        <a target="_blank" class="rolling" href="//rs.school/js-stage0/">
             Rolling Scopes School
-          </p>
         </a>
+      </div>
       <div class="right__block">
-        <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
-          <img src="asset/icon/instagram.svg" alt="Instagram Icon"  class="right__block-icon">
-        </a>
-        <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
-          <img src="asset/icon/facebook.svg" alt="Facebook Icon"  class="right__block-icon">
-        </a>
-        <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
-          <img src="asset/icon/twitter.svg" alt="Twitter Icon"  class="right__block-icon">
-        </a>
-        <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
-          <img src="asset/icon/pinterest.svg" alt="Pinterest Icon"  class="right__block-icon">
-        </a>
+        <ul class="right__block-list">
+          <li class="right__block-list item">
+            <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
+            <img src="asset/icon/instagram.svg" alt="Instagram Icon"  class="right__block-icon">
+            </a>
+          </li>
+          <li class="right__block-list item">
+            <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
+              <img src="asset/icon/facebook.svg" alt="Facebook Icon"  class="right__block-icon">
+            </a>
+          </li>
+          <li class="right__block-list item"> 
+            <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
+              <img src="asset/icon/twitter.svg" alt="Twitter Icon"  class="right__block-icon">
+            </a>
+          </li>
+          <li class="right__block-list item">
+            <a target="_blank" href="//rs.school/js-stage0/" class="right__block-img">
+              <img src="asset/icon/pinterest.svg" alt="Pinterest Icon"  class="right__block-icon">
+            </a>
+          </li>
+
+        </ul>
       </div>
     </div>
   </footer>
 
-  <script src="js/scrypt.js"></script>
+  <script src="./scrypt.js"></script>
 </body>
 </html>
