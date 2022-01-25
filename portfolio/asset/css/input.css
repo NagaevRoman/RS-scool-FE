@@ -110,17 +110,16 @@ p {
 
 .menu__body {
   display: flex;
-  width: 500px;
   height: 50px;
 }
 
 .menu__list {
   display: flex;
-  min-width: 493px;
+  /* min-width: 493px; */
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 0px;
+  padding: 0px 30px;
   margin: 0px;
 }
 
@@ -129,13 +128,13 @@ p {
   align-items:center;
 }
 
-.menu__item:first-child {
+/* .menu__item:first-child {
   margin-left: 30px;
 } 
 
 .menu__item:last-child {
   margin-right: 30px;
-} 
+}  */
 
 
 .header__logo{
@@ -189,7 +188,7 @@ a:hover, a:focus, a:active {
   padding: 0 1px;
 }
 
-.line {
+.slash {
   display: flex;
   height: 50px;
   padding: 0 7px;
@@ -774,6 +773,9 @@ ul.right__block-list {
 
 /* footer syles end */
 
+
+           /* MEDIA */
+
 @media (min-width: 769px) {
   .portfolio__imgs {
     justify-content: space-around;
@@ -793,6 +795,11 @@ ul.right__block-list {
   .munu__body {
     display: none;
   }
+
+  .slash {
+    padding-left: 9px;
+    padding-right: 16px;
+}
 
   .hero__box {
     padding-left: 60px;
@@ -1029,10 +1036,12 @@ ul.right__block-list {
     height: 50px;
     cursor: pointer;
     z-index: 5;
-    margin: 20px 45px 20px 0;
+    margin-right: 5px;
+    padding-left: 20px;
   }
+
   .line {
-      width: 80%;
+      width: 100%;
       height: 2px;
       background: #fff;
       margin: 5px 0;
@@ -1048,33 +1057,39 @@ ul.right__block-list {
   .burger.active .line3 {
       transform: rotate(45deg) translate(-5px, -12px);
   }
+
+  .menu__item:first-child {
+    /* margin-left: 0px; */
+  }
+
   .menu__list {
       display: flex;
       flex-direction: column;
-
       position: fixed;
       top: 0;
       right: 0;
       padding: 0;
-      
       width: 0;
-      height: 100%;
-
-
+      height: 0;
       overflow: hidden;
       background-color: black;
       z-index: 5;
       transition: .3s linear;
+      justify-content: flex-start;
+      align-items:flex-start;
   }
   .menu__list.active {
-      width: 73%;
-      padding: 135px 100px;
+      height: 100%;
+      width: 60%;
+      padding: 135px 0px;
+      padding-left: 127px;
+      padding-right: 25px;
       transition: .3s linear;
   }
   .menu__list.active::after {
       content: '';
       display: block;
-      width: 40%;
+      width: 20%;
       height: 100%;
 
       position: fixed;
@@ -1087,9 +1102,12 @@ ul.right__block-list {
   .menu__item {
       font-size: 32px;
       line-height: 75px;
+      margin: 0;
   }
 
-
+  .switch-lng {
+    z-index: 1;
+  }
 
 }
 

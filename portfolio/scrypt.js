@@ -3,15 +3,15 @@ let burger = document.querySelector('.burger');
 burger.addEventListener('click', function () {
     burger.classList.toggle('active');
 })
-let list__header = document.querySelector('.list__header');
+let menu__list = document.querySelector('.menu__list');
 burger.addEventListener('click', function () {
-    list__header.classList.toggle('active');
+  menu__list.classList.toggle('active');
 })
-const link__header = document.querySelectorAll('.link__header');
-link__header.forEach(n => n.addEventListener('click', closeMenu));
+const menu__link = document.querySelectorAll('.menu__link');
+menu__link.forEach(n => n.addEventListener('click', closeMenu));
 function closeMenu() {
     burger.classList.remove('active');
-    list__header.classList.remove('active');
+    menu__list.classList.remove('active');
 
 
 }
