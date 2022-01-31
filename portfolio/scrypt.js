@@ -1,68 +1,73 @@
-let burger = document.querySelector('.burger');
-burger.addEventListener('click', function () {
-  burger.classList.toggle('active');
-});
-let menu__list = document.querySelector('.menu__list');
-burger.addEventListener('click', function () {
-  menu__list.classList.toggle('active');
-});
-const menu__link = document.querySelectorAll('.menu__link');
-menu__link.forEach((n) => n.addEventListener('click', closeMenu));
-function closeMenu() {
-  burger.classList.remove('active');
-  menu__list.classList.remove('active');
-}
+import i18Obj from './translate.js';
 
-const portfolioBtn = document.querySelectorAll('.button__potfolio');
+  let burger = document.querySelector('.burger');
 
-console.log(portfolioBtn);
-const portfolioImages = document.querySelectorAll('.portfolio__img');
+  let menu__list = document.querySelector('.menu__list');
 
+  const menu__link = document.querySelectorAll('.menu__link');
 
-const portfolioBtns = document.querySelector('.button-switcher');
+  const portfolioBtn = document.querySelectorAll('.button__potfolio');
 
+  const switchLng = document.querySelectorAll('.switch-lng__link');
 
-const seasons = ['winter', 'spring', 'summer', 'autumn'];
+  const switchLngs = document.querySelector('.switch-lng');
 
-function preloadImages() {
-  seasons.forEach(val => {
-    
-    for(let i = 1; i <= 6; i++) {
-      const img = new Image();
-      img.src = `./asset/img/${val}/${i}.jpg`;
-    }
+  const portfolioImages = document.querySelectorAll('.portfolio__img');
 
-  })
-}
-preloadImages();
+  const portfolioBtns = document.querySelector('.button-switcher');
+
+  const seasons = ['winter', 'spring', 'summer', 'autumn'];
+
+  /---------------------------------/ 
+
+  function preloadImages() {
+    seasons.forEach(val => {
+      
+      for(let i = 1; i <= 6; i++) {
+        const img = new Image();
+        img.src = `./asset/img/${val}/${i}.jpg`;
+      }
+  
+    })
+  }
+  preloadImages();
+
+  /---------------------------------/ 
+
+  burger.addEventListener('click', function () {
+    burger.classList.toggle('active');
+  });
+
+  burger.addEventListener('click', function () {
+    menu__list.classList.toggle('active');
+  });
+
+  menu__link.forEach((n) => n.addEventListener('click', closeMenu));
+
+  function closeMenu() {
+    burger.classList.remove('active');
+    menu__list.classList.remove('active');
+  }
+
+  /---------------------------------/ 
+
+// const theme = document.querySelector('.')
+
 
 function changeImage(event) {
   if(event.target.classList.contains('button__potfolio')) {
-        let action = event.target.dataset.season;
-        portfolioImages.forEach((img, index) => img.src = `./asset/img/${action}/${index + 1}.jpg`);
+    let action = event.target.dataset.season;
+    portfolioImages.forEach((img, index) => img.src = `./asset/img/${action}/${index + 1}.jpg`);
     event.target.classList.add('active__portfolio')
   }
 }
 
-
 portfolioBtns.addEventListener('click', 
   changeImage, 
-  
-  // function (event) {
-
-  //   let action = event.target.dataset.season;
-  //   console.log(action);
-  //   console.log(event);
-  //   console.log(dataset.season);
-  //   // console.log(event.target);
-  //   event.target.classList.add('active__portfolio')
-  // }
-  // portfolioBtn.classList.remove('active__portfolio')
-  // portfolioBtn.add('active__portfolio')
 );
 
 portfolioBtns.addEventListener('click', 
-  removeActive )
+  removeActive)
 
 function removeActive () {
 
@@ -72,6 +77,35 @@ function removeActive () {
 }
 
 
+switchLngs.addEventListener('click', 
+remActive)
+
+function remActive () {
+
+  switchLng.forEach((btn => btn.classList.remove('active')));
+  event.target.classList.add('active')
+
+}
+
+
+
+function getTranslate(lang) {
+  let dataAtrs = document.querySelectorAll('[data-i18]');
+  dataAtrs.forEach(
+    el => {
+      let atr = el.getAttribute('data-i18')
+      el.textContent = i18Obj[lang][atr]
+  })
+}
+
+switchLngs.addEventListener("click", (event) => {
+  let lang = event.target.dataset.lng
+  getTranslate(lang)
+} )
+
+getTranslate()
+
+// console.log(i18Obj.en);
 
 // console.log(
 //   `
