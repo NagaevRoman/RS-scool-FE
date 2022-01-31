@@ -16,13 +16,17 @@ import i18Obj from './translate.js';
 
   const portfolioBtns = document.querySelector('.button-switcher');
 
-  const theme = document.querySelector('.switch-them');
+  const them = document.querySelector('.switch-them');
 
   const switchTheme = document.querySelector('.sun');
 
+  let lang = "en";
+
+  let theme = "light";
+
   const seasons = ['winter', 'spring', 'summer', 'autumn'];
 
-  const section = ["body", ".section__skills", ".section__portfolio", ".section__video", ".section__price",  ".price__container", ".skills__wraper", ".button-switcher", ".section-title"
+  const section = ["body", ".section__skills", ".section__portfolio", ".section__video", ".section__price",  ".price__container", ".skills__wraper", ".button-switcher", ".section-title", ".button__potfolio"
   ];
 
   /---------------------------------/ 
@@ -96,21 +100,21 @@ function remActive () {
 
 
 
-function getTranslate(lang) {
+function getTranslate(lg) {
   let dataAtrs = document.querySelectorAll('[data-i18]');
   dataAtrs.forEach(
     el => {
       let atr = el.getAttribute('data-i18')
-      el.textContent = i18Obj[lang][atr]
+      el.textContent = i18Obj[lg][atr]
   })
 }
 
 switchLngs.addEventListener("click", (event) => {
-  let lang = event.target.dataset.lng
-  getTranslate(lang)
-} )
+  let lg = event.target.dataset.lng
+  getTranslate(lg)
+})
 
-theme.addEventListener(
+them.addEventListener(
   "click", () => {
     section.forEach((el) => {
       document.querySelector(el).classList.toggle("light-theme")
@@ -118,6 +122,24 @@ theme.addEventListener(
     switchTheme.classList.toggle('act')
   }
 )
+
+function setLocalStorage() {
+  localStorage.setItem('lang', lang);
+  localStorage.setItem('theme', theme);
+}
+window.addEventListener('beforeunload', setLocalStorage)
+
+function getLocalStorage() {
+  if(localStorage.getItem('lang')) {
+     lang = localStorage.getItem('lang');
+    getTranslate(lang);
+  }
+  
+
+}
+window.addEventListener('load', getLocalStorage)
+window.addEventListener('theme', getLocalStorage)
+
 
 // console.log(theme.remove("sun"));
 // console.log(theme.add("moon"));
