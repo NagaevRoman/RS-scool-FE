@@ -1058,10 +1058,6 @@ ul.right__block-list {
       transform: rotate(45deg) translate(-5px, -12px);
   }
 
-  .menu__item:first-child {
-    /* margin-left: 0px; */
-  }
-
   .menu__list {
       display: flex;
       flex-direction: column;
@@ -1091,13 +1087,10 @@ ul.right__block-list {
       display: block;
       width: 20%;
       height: 100%;
-
       position: fixed;
       top: 0;
       left: 0;
-
       background-color: rgba(0, 0, 0, 0.5);
-      
   }
   .menu__item {
       font-size: 32px;
