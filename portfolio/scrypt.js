@@ -125,20 +125,18 @@ them.addEventListener(
 
 function setLocalStorage() {
   localStorage.setItem('lang', lang);
-  localStorage.setItem('theme', theme);
+  // localStorage.setItem('theme', theme);
 }
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
   if(localStorage.getItem('lang')) {
-     lang = localStorage.getItem('lang');
+    const lang = localStorage.getItem('lang');
     getTranslate(lang);
   }
-  
-
 }
 window.addEventListener('load', getLocalStorage)
-window.addEventListener('theme', getLocalStorage)
+// window.addEventListener('theme', getLocalStorage)
 
 
 // console.log(theme.remove("sun"));
