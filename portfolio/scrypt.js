@@ -16,7 +16,14 @@ import i18Obj from './translate.js';
 
   const portfolioBtns = document.querySelector('.button-switcher');
 
+  const theme = document.querySelector('.switch-them');
+
+  const switchTheme = document.querySelector('.sun');
+
   const seasons = ['winter', 'spring', 'summer', 'autumn'];
+
+  const section = ["body", ".section__skills", ".section__portfolio", ".section__video", ".section__price",  ".price__container", ".skills__wraper", ".button-switcher", ".section-title"
+  ];
 
   /---------------------------------/ 
 
@@ -63,7 +70,7 @@ function changeImage(event) {
 }
 
 portfolioBtns.addEventListener('click', 
-  changeImage, 
+  changeImage 
 );
 
 portfolioBtns.addEventListener('click', 
@@ -103,7 +110,30 @@ switchLngs.addEventListener("click", (event) => {
   getTranslate(lang)
 } )
 
-getTranslate()
+theme.addEventListener(
+  "click", () => {
+    section.forEach((el) => {
+      document.querySelector(el).classList.toggle("light-theme")
+    })
+    switchTheme.classList.toggle('act')
+  }
+)
+
+// console.log(theme.remove("sun"));
+// console.log(theme.add("moon"));
+// console.log(switchTheme);
+
+// switchTheme.addEventListener('click', 
+// changeIm
+// );
+
+// function changeIm(event) {
+//   if(event.target.classList.contains('switchTheme')) {
+//     console.log('ok');
+//   }
+// }
+
+// changeIm()
 
 // console.log(i18Obj.en);
 
