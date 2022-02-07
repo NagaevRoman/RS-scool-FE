@@ -235,13 +235,17 @@
                   <img src="./asset/svg/play.svg" alt="play" class="play-image">
                 </button>
 
+                <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
 
+                <div class="time">
+                  <time id="time-elapsed">00:00</time>
+                  <span class="clock-span"> / </span>
+                  <time id="duration">00:00</time>
+                </div>
 
-            <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
-
-            <button class="player__button toggle" title="Toggle Volume">         
-              <img src="./asset/svg/volume.svg" alt="volume" class="volume-image">     
-            </button>
+                <button class="player__button toggle" title="Toggle Volume">         
+                  <img src="./asset/svg/volume.svg" alt="volume" class="volume-image">     
+                </button>
 
             </div>
           </div>

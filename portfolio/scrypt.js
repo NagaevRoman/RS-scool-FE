@@ -22,13 +22,13 @@ import i18Obj from './translate.js';
 
 
 
-  const vidContainer =document.querySelector('.video__container')
+  const vidContainer =document.querySelector('.video__container');
 
-  const vid = document.querySelector('.player__video')  
+  const vid = document.querySelector('.player__video');
 
   const controlPlay = vidContainer.querySelector('.player__button');
 
-  const playBar = vidContainer.querySelector('.player__controls')
+  const playBar = vidContainer.querySelector('.player__controls');
 
   const controlVol = vidContainer.querySelector('.player__slider[name="volume"]');
 
@@ -36,9 +36,15 @@ import i18Obj from './translate.js';
 
   const progressBar = vidContainer.querySelector('.progress__filled');
 
-  const playVideo = vidContainer.querySelector(".button-play")
+  const playVideo = vidContainer.querySelector(".button-play");
 
-  const playBarImg = controlPlay.querySelector('.play-image')
+  const playBarImg = controlPlay.querySelector('.play-image');
+
+  const mute =  vidContainer.querySelector(".volume-image");
+
+  const timeElapsed = document.getElementById('time-elapsed');
+
+  const duration = document.getElementById('duration');
   
   let drag;
   let grap;
@@ -157,6 +163,8 @@ function getLocalStorage() {
 }
 window.addEventListener('DOMContentLoaded', getLocalStorage)
 
+//-------------Video-player--------------/
+
 
 playVideo.addEventListener('click', function () {
   playVideo.classList.add('active');
@@ -164,14 +172,6 @@ playVideo.addEventListener('click', function () {
   toggleVideo();
 });
 
-function updateProgress() {
-  var progress = vid.currentTime / vid.duration;
-  progressBar.style.flexBasis = Math.floor(progress * 1000) / 10 + '%';
-}
-
-// if (event.target.classList.contains('player__video')) {
-//   vid.addEventListener('click', toggleVideo);
-// }
 
 controlPlay.addEventListener('click', toggleVideo);
 
@@ -189,7 +189,14 @@ controlProgress.addEventListener('click', updateCurrentPos);
 
 controlProgress.addEventListener('mousemove', function(e){ if(drag && grap){updateCurrentPos(e)}});
 
+mute.addEventListener('click', 
+  toggleImgVolume
+);
 
+vid.addEventListener('loadedmetadata', initializeVideo);
+
+
+vid.addEventListener('timeupdate', updateTimeElapsed);
 
 
 function updateVol(){
@@ -216,19 +223,50 @@ function updateCurrentPos(e){
   vid.currentTime = newProgress * vid.duration;
 }
 
+function updateProgress() {
+  let progress = vid.currentTime / vid.duration;
+  progressBar.style.flexBasis = Math.floor(progress * 1000) / 10 + '%';
+}
 
-function toggleVolume() {
-  if (vid.paused) {
-    vid.play();
-    playBarImg.src = "./asset/svg/pause.svg"
-    updateProgress();
-    progression = window.setInterval(updateProgress, 200);
+
+  // volume-image
+
+
+function toggleImgVolume() {
+  console.log(vid.muted);
+  if (vid.muted) {
+    vid.muted = !vid.muted;;
+    mute.src = "./asset/svg/volume.svg"
   } else {
-    vid.pause();
-    playBarImg.src = "./asset/svg/play.svg"
-    clearInterval(progression);
+    vid.muted = !vid.muted;
+    mute.src = "./asset/svg/mute.svg"
   };
 }
+
+function formatTime(timeInSeconds) {
+  const result = new Date(timeInSeconds * 1000).toISOString().substr(11, 8);
+
+  return {
+    minutes: result.substr(3, 2),
+    seconds: result.substr(6, 2),
+  };
+};
+
+
+function initializeVideo() {
+  const videoDuration = Math.round(vid.duration);
+  const time = formatTime(videoDuration);
+  duration.innerText = `${time.minutes}:${time.seconds}`;
+  duration.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`)
+}
+
+function updateTimeElapsed() {
+  const time = formatTime(Math.round(vid.currentTime));
+  timeElapsed.innerText = `${time.minutes}:${time.seconds}`;
+  timeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`)
+}
+
+
 
 // function setLocalStorage(theme) {
 //   localStorage.setItem('theme', theme);
