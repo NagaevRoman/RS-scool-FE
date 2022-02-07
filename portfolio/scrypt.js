@@ -166,13 +166,6 @@ window.addEventListener('DOMContentLoaded', getLocalStorage)
 //-------------Video-player--------------/
 
 
-playVideo.addEventListener('click', function () {
-  playVideo.classList.add('active');
-  playBar.classList.add('active');
-  toggleVideo();
-});
-
-
 controlPlay.addEventListener('click', toggleVideo);
 
 controlVol.addEventListener('change', updateVol);
@@ -199,8 +192,14 @@ vid.addEventListener('loadedmetadata', initializeVideo);
 vid.addEventListener('timeupdate', updateTimeElapsed);
 
 
+playVideo.addEventListener('click', function () {
+  playVideo.classList.add('active');
+  playBar.classList.add('active');
+  toggleVideo();
+});
+
 function updateVol(){
-  var volume = this.value;
+  const volume = this.value;
   vid.volume = volume;
 }
 

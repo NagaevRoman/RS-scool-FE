@@ -529,6 +529,18 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   background: #cf09c5;
 }
 
+.time {
+  margin: 0 30px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 28px;
+}
+
+.clock-span {
+  margin: 0 3px;
+}
+
 .video__play {
   padding-top: 8px;
 }
@@ -567,17 +579,6 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   transition-duration: 0.5s;
 }
 
-.time {
-  margin: 0 30px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  font-size: 28px;
-}
-
-.clock-span {
-  margin: 0 3px;
-}
 
 /* video syles end */
 
