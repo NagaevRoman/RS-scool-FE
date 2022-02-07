@@ -209,11 +209,10 @@ function updateVol(){
   vid.volume = volume;
   if (!vid.volume) {
     mute.src = "./asset/svg/mute.svg"
-    console.log(vid.volume);
   } else {
     mute.src = "./asset/svg/volume.svg"
   }
-
+  this.style.background = `linear-gradient(to right, #518788 0%, #f1238a ${volume*100}%, #fff ${volume*100}%, white 100%)`
 }
 
 function toggleVideo() {
