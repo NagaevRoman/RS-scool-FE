@@ -20,7 +20,7 @@ import i18Obj from './translate.js';
 
   const switchTheme = document.querySelector('.sun');
 
-
+  const progress = document.querySelector('.progress')
 
   const vidContainer =document.querySelector('.video__container');
 
@@ -192,11 +192,17 @@ vid.addEventListener('loadedmetadata', initializeVideo);
 vid.addEventListener('timeupdate', updateTimeElapsed);
 
 
-playVideo.addEventListener('click', function () {
+playVideo.addEventListener('click', activeAdd);
+
+
+vid.addEventListener('click', activeAdd);
+
+function activeAdd () {
   playVideo.classList.add('active');
   playBar.classList.add('active');
+  progress.classList.add('active');
   toggleVideo();
-});
+}
 
 function updateVol(){
   const volume = this.value;

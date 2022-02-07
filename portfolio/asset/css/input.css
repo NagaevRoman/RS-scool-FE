@@ -449,17 +449,9 @@ p.text__box {
   transform: translateY(0);
 }
 
-
-
-/* .player__controls.active {
-  transition:all .3s;
-} */
-
-
 .player__controls > * {
   flex:2;
 }
-
 
 .player__button {
   background:none;
@@ -483,8 +475,12 @@ p.text__box {
   transition:height 0.3s;
   background:rgba(0,0,0,0.5);
   cursor:ew-resize;
+  visibility: hidden;
 }
 
+.progress.active {
+  visibility: visible;
+}
 .player__slider {
   max-width: 20%;
 }
