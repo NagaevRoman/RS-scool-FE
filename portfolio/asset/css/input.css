@@ -425,8 +425,108 @@ p.text__box {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(../img/video-player.jpg) no-repeat center 0;
-  height: 705px;
+
+}
+
+.player__video {
+  width: 100%;
+  height: 100%;
+}
+
+.player__controls {
+  display:flex;
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  transform: translateY(100%) translateY(-5px);
+  transition:all .3s;
+  flex-wrap:wrap;
+  background:rgba(0,0,0,0.1);
+  height: 50px;
+  justify-content: space-around;
+  visibility: hidden;
+}
+
+.player__controls.active {
+  transition:all .3s;
+  visibility: visible;
+}
+
+
+.player__controls > * {
+  flex:2;
+}
+
+.player:hover .player__controls {
+  transform: translateY(0);
+}
+
+.player__button {
+  background:none;
+  border:0;
+  line-height:1;
+  color:white;
+  text-align: center;
+  outline:0;
+  padding: 0;
+  cursor:pointer;
+  max-width:50px;
+  margin: 5px 30px;
+}
+
+.progress {
+  flex:10;
+  position: relative;
+  display:flex;
+  flex-basis:100%;
+  height:5px;
+  transition:height 0.3s;
+  background:rgba(0,0,0,0.5);
+  cursor:ew-resize;
+}
+
+.player__slider {
+  max-width: 20%;
+}
+
+.progress__filled {
+  width:50%;
+  background:#ffc600;
+  flex:0;
+  flex-basis:50%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background:transparent;
+  width: 100%;
+  margin: 0 5px;
+}
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: rgba(255,255,255,0.8);
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+input[type=range]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #ffc600;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+  box-shadow:0 0 2px rgba(0,0,0,0.2);
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #bada55;
 }
 
 .video__play {
@@ -440,6 +540,16 @@ p.text__box {
   background-color: transparent;
   border: 0;
   cursor: pointer;
+}
+
+.button-play.active{
+  visibility: hidden;
+}
+
+.button-play:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+  transition-duration: 0.5s;
 }
 
 .icon {

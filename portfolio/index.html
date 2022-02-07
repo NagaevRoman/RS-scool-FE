@@ -54,7 +54,6 @@
             </div>
             <div class="switch-them">
               <a href="#" class="sun">
-                <!-- <img name="img-lng" src="./asset/icon/carbon_sun.svg" alt="Sun"> -->
               </a>
             </div>
             <div class="burger">
@@ -218,11 +217,33 @@
             <h2 class="section-title" data-i18="video">Video</h2>
           </div>
           <div class="video__container">
+            <video class="player__video" src="./asset/video/video.mp4"></video>
+
             <button class="button-play" type="submit">
               <svg class="icon">
                 <use xlink:href="asset/icon/Play_hover.svg#play"></use>
               </svg>
             </button>
+
+            <div class="player__controls">
+
+              <div class="progress">
+                <div class="progress__filled"></div>
+              </div>
+
+                <button class="player__button toggle" title="Toggle Play">              
+                  <img src="./asset/svg/play.svg" alt="play" class="play-image">
+                </button>
+
+
+
+            <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+
+            <button class="player__button toggle" title="Toggle Volume">         
+              <img src="./asset/svg/volume.svg" alt="volume" class="volume-image">     
+            </button>
+
+            </div>
           </div>
         </section>
         <section class="section__price" id="price">
