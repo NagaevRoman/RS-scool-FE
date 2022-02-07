@@ -485,6 +485,8 @@ p.text__box {
   max-width: 20%;
 }
 
+
+
 .progress__filled {
   width:50%;
   background: linear-gradient(to right, #518788 0%, #f1238a 20%);

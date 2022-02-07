@@ -218,12 +218,13 @@ function updateVol(){
 function toggleVideo() {
   if (vid.paused) {
     vid.play();
-    playBarImg.src = "./asset/svg/pause.svg"
+    playBarImg.src = "./asset/svg/pause.svg";
     updateProgress();
     progression = window.setInterval(updateProgress, 200);
   } else {
     vid.pause();
-    playBarImg.src = "./asset/svg/play.svg"
+    playBarImg.src = "./asset/svg/play.svg";
+    playVideo.classList.remove('active');
     clearInterval(progression);
   };
 }
