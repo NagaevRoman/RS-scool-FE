@@ -20,7 +20,7 @@ import i18Obj from './translate.js';
 
   const switchTheme = document.querySelector('.sun');
 
-
+  const progress = document.querySelector('.progress')
 
   const vidContainer =document.querySelector('.video__container');
 
@@ -166,13 +166,6 @@ window.addEventListener('DOMContentLoaded', getLocalStorage)
 //-------------Video-player--------------/
 
 
-playVideo.addEventListener('click', function () {
-  playVideo.classList.add('active');
-  playBar.classList.add('active');
-  toggleVideo();
-});
-
-
 controlPlay.addEventListener('click', toggleVideo);
 
 controlVol.addEventListener('change', updateVol);
@@ -199,20 +192,39 @@ vid.addEventListener('loadedmetadata', initializeVideo);
 vid.addEventListener('timeupdate', updateTimeElapsed);
 
 
+playVideo.addEventListener('click', activeAdd);
+
+
+vid.addEventListener('click', activeAdd);
+
+function activeAdd () {
+  playVideo.classList.add('active');
+  playBar.classList.add('active');
+  progress.classList.add('active');
+  toggleVideo();
+}
+
 function updateVol(){
-  var volume = this.value;
+  const volume = this.value;
   vid.volume = volume;
+  if (!vid.volume) {
+    mute.src = "./asset/svg/mute.svg"
+  } else {
+    mute.src = "./asset/svg/volume.svg"
+  }
+  this.style.background = `linear-gradient(to right, #518788 0%, #f1238a ${volume*100}%, #fff ${volume*100}%, white 100%)`
 }
 
 function toggleVideo() {
   if (vid.paused) {
     vid.play();
-    playBarImg.src = "./asset/svg/pause.svg"
+    playBarImg.src = "./asset/svg/pause.svg";
     updateProgress();
     progression = window.setInterval(updateProgress, 200);
   } else {
     vid.pause();
-    playBarImg.src = "./asset/svg/play.svg"
+    playBarImg.src = "./asset/svg/play.svg";
+    playVideo.classList.remove('active');
     clearInterval(progression);
   };
 }
