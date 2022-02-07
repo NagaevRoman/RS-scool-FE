@@ -207,6 +207,13 @@ function activeAdd () {
 function updateVol(){
   const volume = this.value;
   vid.volume = volume;
+  if (!vid.volume) {
+    mute.src = "./asset/svg/mute.svg"
+    console.log(vid.volume);
+  } else {
+    mute.src = "./asset/svg/volume.svg"
+  }
+
 }
 
 function toggleVideo() {
