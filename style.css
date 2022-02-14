@@ -110,3 +110,37 @@ body {
   /* max-width:  300px;
   max-height:  250px; */
 }
+
+
+.footer {
+  display: flex;
+  padding: 40px;
+  justify-content: space-between;
+}
+
+.left__block-items{
+  display: flex; 
+  justify-content: center;
+}
+.my-github{
+  font-size: 1.6rem;
+  margin: 20px 200px;
+}
+
+.right__block {
+  margin: 20px 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  line-height: 50px;
+  margin: 20px 0;
+  font-size: 1.6rem;
+}
+
+p {
+  justify-content: center;
+  margin: auto 0;
+  font-size: 1.6rem;
+}
