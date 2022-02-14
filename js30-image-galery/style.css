@@ -113,9 +113,12 @@ body {
 
 
 .footer {
+  max-width: 1360px;
   display: flex;
+  margin: 0 auto;
   padding: 40px;
   justify-content: space-between;
+  background-color:#fff
 }
 
 .left__block-items{
@@ -143,4 +146,8 @@ p {
   justify-content: center;
   margin: auto 0;
   font-size: 1.6rem;
+}
+
+.rs {
+  width: 140px;
 }

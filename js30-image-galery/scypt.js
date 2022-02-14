@@ -15,7 +15,7 @@ function createImage(url) {
 
 let searchForm = document.forms[0];
 let elem = searchForm.elements.text;
-console.log(elem.value);
+console.log(form[0].value);
 // console.log(elem.value);
 // submit.addEventListener('click', function(){
 //   console.log(`${document.form.inp.value}`)
@@ -25,18 +25,16 @@ function complete(value) {
   search = value;
 }
 form.onsubmit = function() {
-  let value = elem.value;
+  let value = form[0].value;
   console.log(value);
   if (value == '') return false; 
-
-  complete(value);
   return false;
 };
 
 
 let search 
 if (search === undefined) {
-  search = 'winter'
+  search = 'spring'
 }
 
 
