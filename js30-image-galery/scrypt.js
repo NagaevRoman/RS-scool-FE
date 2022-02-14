@@ -15,7 +15,8 @@ function createImage(url) {
 
 let searchForm = document.forms[0];
 let elem = searchForm.elements.text;
-console.log(form[0].value);
+
+
 // console.log(elem.value);
 // submit.addEventListener('click', function(){
 //   console.log(`${document.form.inp.value}`)
@@ -25,8 +26,8 @@ function complete(value) {
   search = value;
 }
 form.onsubmit = function() {
+
   let value = form[0].value;
-  console.log(value);
   if (value == '') return false; 
   return false;
 };
@@ -34,7 +35,9 @@ form.onsubmit = function() {
 
 let search 
 if (search === undefined) {
+
   search = 'spring'
+
 }
 
 
@@ -65,3 +68,4 @@ getData();
 //   // gallery.insertBefore(createImage(url))
 // 	gallery.appenChild(createImage(url))	
 // }
+
