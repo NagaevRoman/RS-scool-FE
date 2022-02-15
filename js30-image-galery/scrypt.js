@@ -29,7 +29,9 @@ textSearch.addEventListener("keydown", (event) => {
   }
 })
 
-
+function setFocus(){
+  document.getElementById('inp').focus();
+}
 
 let search = 'spring'
 function searchOut(val) {
