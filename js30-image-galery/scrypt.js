@@ -17,6 +17,7 @@ function createImage(url) {
   gallery.appendChild(el)
 }
 
+
 function removeImg() {
   while (gallery.firstChild) {
     gallery.removeChild(gallery.firstChild)
@@ -31,7 +32,6 @@ textSearch.addEventListener("keydown", (event) => {
   if (keyName === 'Enter') {
     console.log(textSearch.value);
     searchOut(textSearch.value)
-    // return;
   }
 })
 
@@ -46,10 +46,30 @@ function searchOut(val) {
     search = val
     removeImg()
     getData();
-    // localStorage.setItem('name', `${val}`);
-    // var myName = localStorage.getItem('name');
-    // console.log(myName);
   }
+
+let searchForm = document.forms[0];
+let elem = searchForm.elements.text;
+
+
+function complete(value) {
+  document.onkeydown = null;
+  search = value;
+}
+form.onsubmit = function() {
+
+  let value = form[0].value;
+  if (value == '') return false; 
+  return false;
+};
+
+
+let search 
+if (search === undefined) {
+
+  search = 'spring'
+
+
 }
 
 
@@ -106,3 +126,4 @@ getData();
 //   // gallery.insertBefore(createImage(url))
 // 	gallery.appenChild(createImage(url))	
 // }
+
