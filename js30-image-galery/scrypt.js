@@ -1,8 +1,7 @@
 
 const gallery = document.querySelector('.grid')
 
-const form  = document.getElementsByTagName('form')
-console.log(form);
+const textSearch = document.getElementById('inp')
 
 const submit = document.querySelector('.searching')
 
@@ -13,59 +12,49 @@ function createImage(url) {
   gallery.appendChild(el)
 }
 
-let searchForm = document.forms[0];
-let elem = searchForm.elements.text;
-
-
-// console.log(elem.value);
-// submit.addEventListener('click', function(){
-//   console.log(`${document.form.inp.value}`)
-// })
-function complete(value) {
-  document.onkeydown = null;
-  search = value;
+function removeImg() {
+  while (gallery.firstChild) {
+    gallery.removeChild(gallery.firstChild)
+  }
 }
-form.onsubmit = function() {
 
-  let value = form[0].value;
-  if (value == '') return false; 
-  return false;
-};
+submit.addEventListener("click", () => searchOut(textSearch.value))
 
 
-let search 
-if (search === undefined) {
+textSearch.addEventListener("keydown", (event) => {
+  const keyName = event.key;
+  if (keyName === 'Enter') {
+    console.log(textSearch.value);
+    searchOut(textSearch.value)
+  }
+})
 
-  search = 'spring'
 
+
+let search = 'spring'
+function searchOut(val) {
+  if (val === undefined || val === '') {
+    return search 
+  } else {
+    console.log(search);
+    search = val
+    removeImg()
+    getData();
+  }
 }
+
 
 
 async function getData() {
   const res = await fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=0ba8cb4d45c90acd73eeb53fa8ebb494&tags= + ${search} + &orientation=landscape&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`);
   const data = await res.json();
-  // console.log(data);
+
   for (let i = 0; i < data.photos.photo.length; i++) {
     let link = data.photos.photo[i].url_m
-    // let title = data.photos.photo[0].title
+
     createImage(link)
-    // createTitle(title)
+
   }
-  // console.log(data.photos.getInfo.api_key);
+
 }
 getData();
-
-
-// function createTitle(title) {
-//   let val = document.createElement('div')
-//   val.innerHTML = '<p>' + title + '</p>'
-//   val.classList.add("text")
-//   gallery.appendChild(val)
-// }
-
-
-// function addListItem(url) {
-//   // gallery.insertBefore(createImage(url))
-// 	gallery.appenChild(createImage(url))	
-// }
-
