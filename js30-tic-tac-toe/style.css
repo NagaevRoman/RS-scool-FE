@@ -25,6 +25,41 @@ span {
   
 }
 
+.wraper-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+p {
+  display: flex;
+  align-items: center;
+}
+
+.win1 {
+  display: flex;
+  margin-right: 30px;
+  font-size: 30px;
+}
+.win2 {
+  display: flex;
+  font-size: 30px;
+}
+
+.cross { 
+  padding: 0 3px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+.naught {
+  padding: 0 3px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
 .table-wraper {
   width: 100%;
   height: 100%;
