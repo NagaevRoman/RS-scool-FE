@@ -36,9 +36,10 @@ span {
 .tablet {
   display: flex;
   flex-wrap: wrap;
-  width: 300px;
-  height: 300px;
+  width: 310px;
+  height: 310px;
   margin: 40px;
+  gap: 5px;
 }
 .cell {
   display: flex;
@@ -49,7 +50,7 @@ span {
   height: 100px;
   font-size: 60px;
   color: black;
-  border: 2px solid #55E9BC;
+  border: 3px solid #55E9BC;
 }
 
 .btn {
