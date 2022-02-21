@@ -36,8 +36,8 @@ span {
 .tablet {
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
+  width: 300px;
+  height: 300px;
   margin: 40px;
 }
 .cell {
@@ -45,9 +45,9 @@ span {
   box-sizing: border-box;
   justify-content: center;
   align-items:center;
-  width: 200px;
-  height: 200px;
-  font-size: 100px;
+  width: 100px;
+  height: 100px;
+  font-size: 60px;
   color: black;
   border: 2px solid #55E9BC;
 }
@@ -136,7 +136,7 @@ span {
   max-width: 1360px;
   display: flex;
   flex-direction: row;
-  padding: 40px;
+  padding: 0 40px;
   justify-content: space-between;
   background-image: linear-gradient(red, orange);
 }
