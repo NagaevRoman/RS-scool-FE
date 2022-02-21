@@ -6,6 +6,8 @@ const modRes = document.querySelector('.modal-result');
 const overlay = document.querySelector('.overlay');
 const close = document.querySelector('.btn-close');
 const steps = document.querySelector('.steps');
+const cr = document.querySelector('.cross')
+const na = document.querySelector('.naught')
 
 const answer = [
   [0,1,2],
@@ -43,11 +45,12 @@ function checkStatus() {
   for (let i = 0; i < answer.length; i++) {
     if (cells[answer[i][0]].innerHTML == 'X' && cells[answer[i][1]].innerHTML == 'X' && cells[answer[i][2]].innerHTML == 'X') {
        crossWon++
-       console.log(crossWon);
+       cr.innerHTML = `${crossWon}`
        result = 'cross'
        prResult(result)
     } else if (cells[answer[i][0]].innerHTML == 'O' && cells[answer[i][1]].innerHTML == 'O' && cells[answer[i][2]].innerHTML == 'O') {
-      naughtWon++
+       naughtWon++
+       na.innerHTML = `${naughtWon}`
        result = 'naught'
        prResult(result)
     } 
@@ -56,8 +59,6 @@ function checkStatus() {
 
 
 const prResult = winner => {
-  steps
-  
   cont.innerHTML = `Congratulations! <br>
   ${winner} won!`
   steps.innerHTML = `Steps: ${count}`
@@ -71,6 +72,8 @@ const closeMod = () => {
     cells[i].innerHTML = ''
   }
 };
+
+
 
 const restartGame = () => {
   location.reload()
