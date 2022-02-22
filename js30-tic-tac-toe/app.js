@@ -39,7 +39,6 @@ tablet.addEventListener('click', e => {
       cont.innerHTML = "Drawn game"
       modRes.style.display = 'block'
     }
-    console.log(count);
   }
 })
 
@@ -87,8 +86,18 @@ close.addEventListener('click', closeMod)
 rest.addEventListener('click', restartGame)
 overlay.addEventListener('click', closeMod)
 start.addEventListener('click', startGame)
+// -----------------------------------
 
+// Add storage
 
+const addLockStor = () => {
+  if ((crossWon + naughtWon) === 3) {
+    console.log('ik');
+    localStorage.setItem('crossWon', `${crossWon}`);
+    localStorage.setItem('naughtWon', `${naughtWon}`);
+  }
+}
+addLockStor()
 
 // BUTTON sound
 

@@ -73,7 +73,7 @@ p {
   flex-wrap: wrap;
   width: 310px;
   height: 310px;
-  margin: 40px;
+  margin: 15px;
   gap: 5px;
 }
 .cell {
