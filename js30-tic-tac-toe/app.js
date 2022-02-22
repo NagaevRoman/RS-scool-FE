@@ -6,8 +6,10 @@ const modRes = document.querySelector('.modal-result');
 const overlay = document.querySelector('.overlay');
 const close = document.querySelector('.btn-close');
 const steps = document.querySelector('.steps');
-const cr = document.querySelector('.cross')
-const na = document.querySelector('.naught')
+const cr = document.querySelector('.cross');
+const na = document.querySelector('.naught');
+const start = document.querySelector('.btn-start');
+const modStart = document.querySelector('.modal-start');
 
 const answer = [
   [0,1,2],
@@ -73,7 +75,9 @@ const closeMod = () => {
   }
 };
 
-
+const startGame = () => {
+  modStart.style.display = 'none'
+}
 
 const restartGame = () => {
   location.reload()
@@ -82,8 +86,41 @@ const restartGame = () => {
 close.addEventListener('click', closeMod)
 rest.addEventListener('click', restartGame)
 overlay.addEventListener('click', closeMod)
+start.addEventListener('click', startGame)
 
-// console.log(crossWon);
-// console.log(naughtWon);
-// console.log(count);
 
+
+// BUTTON sound
+
+function setupSynth() {
+  window.synth = new Tone.Synth({
+    oscillator: {
+      type: 'sine',
+      modulationFrequency: 0.5
+    },
+    envelope: {
+      attack: 0,
+      decay: 0.2,
+      sustain: 0,
+      release: 0.5,
+    }
+  }).toMaster();
+}
+
+function boopMe() {
+  if (!window.synth) {
+    setupSynth();
+  }
+  
+  window.synth.triggerAttackRelease(600, '9n');
+}
+
+rest.addEventListener('touchstart', function(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  boopMe();
+})
+
+rest.addEventListener('mousedown', boopMe)
+start.addEventListener('mousedown', boopMe)
+close.addEventListener('mousedown', boopMe)
