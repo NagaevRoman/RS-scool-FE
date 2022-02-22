@@ -12,11 +12,6 @@
   <div class="container">
     <div class="title">
       <h1>Tic-tac-toe</h1>
-      <span>Wins :</span>
-      <div class="wraper-stats">
-        <div class="win1">CROSS : <p class="cross"></p></div>
-        <div class="win2">NAUGHT : <p class="naught"></p></div>
-      </div>
     </div>
     <div class="table-wraper">
         <div class="tablet">
@@ -30,8 +25,25 @@
           <div class="cell"></div>
           <div class="cell"></div>
         </div>
-        <button class="btn">RESTART</button>
+        <div class="wrap-results">
+          <div class="wrap-results__wins">
+            <span>WINS :</span>
+            <div class="wraper-stats">
+              <div class="win1">CROSS : <p class="cross"></p></div>
+              <div class="win2">NAUGHT : <p class="naught"></p></div>
+            </div>
+          </div>
+          <div class="wrap-results__last">
+            <span>LAST 10 GAMES :</span>
+            <div class="wraper-stats">
+              <div class="win1">CROSS : <p class="last-cross"></p></div>
+              <div class="win2">NAUGHT : <p class="last-naught"></p></div>
+            </div>
+          </div>
+        </div>
+        
     </div>
+    <div class="button-rest"><button class="btn rest">RESTART</button></div>
   </div>
 
   <div class="modal-start">

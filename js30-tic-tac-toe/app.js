@@ -10,6 +10,8 @@ const cr = document.querySelector('.cross');
 const na = document.querySelector('.naught');
 const start = document.querySelector('.btn-start');
 const modStart = document.querySelector('.modal-start');
+const lastCr = document.querySelector('.last-cross');
+const lastNa = document.querySelector('.last-naught'); 
 
 const answer = [
   [0,1,2],
@@ -42,6 +44,7 @@ tablet.addEventListener('click', e => {
   }
 })
 
+
 function checkStatus() {
   for (let i = 0; i < answer.length; i++) {
     if (cells[answer[i][0]].innerHTML == 'X' && cells[answer[i][1]].innerHTML == 'X' && cells[answer[i][2]].innerHTML == 'X') {
@@ -60,6 +63,7 @@ function checkStatus() {
 
 
 const prResult = winner => {
+  addLockStor()
   cont.innerHTML = `Congratulations! <br>
   ${winner} won!`
   steps.innerHTML = `Steps: ${count}`
@@ -75,11 +79,14 @@ const closeMod = () => {
 };
 
 const startGame = () => {
+  lastCr.innerHTML = localStorage.getItem('crossWon')
+  lastNa.innerHTML = localStorage.getItem('naughtWon')
   modStart.style.display = 'none'
 }
 
 const restartGame = () => {
-  location.reload()
+  location.reload();
+  localStorage.clear();
 }
 
 close.addEventListener('click', closeMod)
@@ -91,13 +98,16 @@ start.addEventListener('click', startGame)
 // Add storage
 
 const addLockStor = () => {
-  if ((crossWon + naughtWon) === 3) {
-    console.log('ik');
+  console.log(crossWon);
+  console.log(naughtWon);
+  if ((crossWon + naughtWon) % 10 === 0) {
+    lastCr.innerHTML = `${crossWon}`
+    lastNa.innerHTML = `${naughtWon}`
     localStorage.setItem('crossWon', `${crossWon}`);
     localStorage.setItem('naughtWon', `${naughtWon}`);
   }
 }
-addLockStor()
+
 
 // BUTTON sound
 
