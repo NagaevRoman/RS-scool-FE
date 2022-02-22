@@ -90,11 +90,11 @@ p {
 
 .btn {
   padding:5px 10px; 
-  color:#fff; 
+  color:#e74c3c; 
   font-family:Arial, Helvetica, sans-serif; 
   font-size:27px; 
   background-color: blue;
-  border: 2px solid black;
+  border: 0.6em solid #3498db;
   border-radius: 5px;
   clear:both; 
   cursor:pointer; 
@@ -105,11 +105,37 @@ p {
   height: 60px;
   width:260px;
   margin: 10px;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  transform: scale(1.1, 1.1);
+}
+/* /------------------------------------/ */
+
+/* Modal SSTART game */
+
+.modal-start {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.content-start{
+  color:#fff; 
+  font-family:Arial, Helvetica, sans-serif; 
+  font-size:50px; 
 }
 
 /* /------------------------------------/ */
 
-/* Modal */
+/* Modal next game */
 .modal-result {
   position: absolute;
   top: 0;
@@ -145,7 +171,7 @@ p {
   font-family:Arial, Helvetica, sans-serif; 
   font-size:50px; 
 }
-.btn-close {
+.btn {
   padding:5px 10px; 
   color:#fff; 
   font-family:Arial, Helvetica, sans-serif; 
